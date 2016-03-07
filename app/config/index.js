@@ -1,0 +1,1 @@
+export const API_URL = 'http://timeapi.pxp200.com/api/v1/';
