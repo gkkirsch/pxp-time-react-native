@@ -9,9 +9,11 @@ import Login from '../components/Login';
 
 const styles = StyleSheet.create({
   loader: {
+    position: 'absolute',
+  },
+  login: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   }
 })
 
@@ -20,8 +22,8 @@ class TimeTracker extends Component {
     console.log('----------- THE STORE  -----------', this.props.state)
     const { user } = this.props;
     return (
-      <View>
-      { !user.isAuth && <Login onSubmit={this.props.actions.loginUser} /> }
+      <View style={ styles.login }>
+      { !user.isAuth && <Login style={ styles.login } onSubmit={this.props.actions.loginUser} /> }
       <ActivityIndicatorIOS
         style={ styles.loader }
         animating={ user.isLoading }
